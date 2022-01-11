@@ -5,6 +5,11 @@ import java.util.Scanner;
 // java ArrayListDemo.java < numbers.txt > outPut.txt
 
 public class ArrayListDemo {
+    private static void  printArraylist(ArrayList<Integer> numbers){
+        for(int number : numbers){
+            System.out.println(number);
+        }
+    }
     public static void main(String args[]){
 
         // You cannot directly insert primitive types (so you can't insert int)
@@ -22,6 +27,7 @@ public class ArrayListDemo {
         // You can assign a primitive to a Wrapper variable it is called auto-boxing
         // in revers it is outo-unboxing
         ArrayList<Integer> numbers = new ArrayList<>();
+
         Random rand = new Random();
         for(int i = 0; i < 10; i++){
             int randNumber = rand.nextInt(100);
@@ -29,9 +35,7 @@ public class ArrayListDemo {
         }
         // enhanced for loop, printing numbers
         System.out.println("Printing numbers");
-        for(int number : numbers){
-            System.out.println(number);
-        }
+        printArraylist(numbers);
 
         //Copy numbers
         ArrayList<Integer> numbersSoftCopy = numbers;
@@ -40,24 +44,18 @@ public class ArrayListDemo {
 
         //print numbers and show that 27 was added
         System.out.println("Printing numbers");
-        for(int number : numbers){
-            System.out.println(number);
-        }
+        printArraylist(numbers);
 
         ArrayList<Integer> numbersHardCopy = new ArrayList<>(numbers);
         numbers.remove(4);
 
         //print numbers and show that 27 deleted and everything else got pushed up
         System.out.println("Printing numbers");
-        for(int number : numbers){
-            System.out.println(number);
-        }
+        printArraylist(numbers);
 
         //print numbersHardCopy and show that 27 is still there
         System.out.println("Printing numbersHardCopy");
-        for(int number : numbersHardCopy){
-            System.out.println(number);
-        }
+        printArraylist(numbersHardCopy);
 
         /*
             when you remove a element from an array list the size gets smaller,
@@ -77,10 +75,6 @@ public class ArrayListDemo {
         }
 
         System.out.println("Printing numbers");
-        for(int number : numbers){
-            System.out.println(number);
-        }
-
-
+        printArraylist(numbers);
     }
 }
